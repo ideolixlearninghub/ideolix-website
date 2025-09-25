@@ -12,17 +12,22 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <!-- Your Logo - Properly Sized -->
                 <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/ideolix%20LOGO.jpg" 
                      alt="Ideolix Learning Hub" class="logo-img">
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <div class="nav-menu">
-                <a href="#home">Home</a>
-                <a href="#welcome">Welcome</a>
-                <a href="#programs">Programs</a>
-                <a href="#admission">Admission</a>
-                <a href="#why-choose">Why Choose Us</a>
-                <a href="#contact">Contact</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#welcome" class="nav-link">Welcome</a>
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#admission" class="nav-link">Admission</a>
+                <a href="#why-choose" class="nav-link">Why Choose Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
@@ -31,7 +36,6 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <!-- Center Logo - Properly Sized -->
                 <div class="hero-logo-container">
                     <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/ideolix%20LOGO.jpg" 
                          alt="Ideolix Learning Hub" class="hero-logo">
@@ -41,80 +45,37 @@
                 <p>Transforming Education in the Digital Age - Leveraging Technology to Education from Grade 1 to Grade 12</p>
                 <div class="hero-buttons">
                     <a href="#admission" class="btn btn-primary">Enroll Today</a>
-                    <a href="#welcome" class="btn btn-secondary">Read Welcome Address</a>
+                    <a href="#programs" class="btn btn-secondary">View Programs</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Welcome Address Section -->
-    <section id="welcome" class="about" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
+    <section id="welcome" class="about">
         <div class="container">
             <h2>Welcome Address from Our Founder</h2>
             <div class="about-grid">
-                <div class="about-card" style="grid-column: 1 / -1; text-align: left; padding: 3rem;">
-                    <!-- Founder Photo - Properly Sized -->
+                <div class="about-card" style="grid-column: 1 / -1; text-align: left; padding: 2rem;">
                     <div class="founder-photo-container">
                         <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/WhatsApp%20Image%202025-09-25%20at%2020.52.35_ddf48a27.jpg" 
                              alt="Ogunlana Yusuf Olayinka - Founder" class="founder-photo">
                     </div>
                     
-                    <h3 style="text-align: center; color: var(--ideolix-blue); margin-bottom: 1.5rem;">
-                        A Message from Ogunlana Yusuf Olayinka
-                    </h3>
+                    <h3>A Message from Ogunlana Yusuf Olayinka</h3>
                     
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        <strong>"I am honoured to welcome you to Ideolix Learning Hub.</strong> Our loving and competent team of educators is eager to nurture your child from any level utilizing the best approach that suits your child which includes the Planes of Developmental psychology: cognitive, social, emotional, physical and technological."
-                    </p>
+                    <p><strong>"I am honoured to welcome you to Ideolix Learning Hub.</strong> Our loving and competent team of educators is eager to nurture your child from any level utilizing the best approach that suits your child which includes the Planes of Developmental psychology: cognitive, social, emotional, physical and technological."</p>
                     
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        "We teach students by integrating Technology to education using gamified methods and other ones we deem fit based on your child's academical needs. We respect all ethnicities and religious affiliations and believe in a strong sense of inclusiveness."
-                    </p>
+                    <p>"We teach students by integrating Technology to education using gamified methods and other ones we deem fit based on your child's academical needs. We respect all ethnicities and religious affiliations and believe in a strong sense of inclusiveness."</p>
                     
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        "Our school is known for employing the best tactics, methods and technology to enable adequate understanding. And, we assure you sincerely, of your child's growth. We look forward to meeting you and welcoming you as part of the Ideolix family."
-                    </p>
+                    <p>"Our school is known for employing the best tactics, methods and technology to enable adequate understanding. And, we assure you sincerely, of your child's growth. We look forward to meeting you and welcoming you as part of the Ideolix family."</p>
                     
-                    <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(37, 99, 235, 0.1); border-radius: 10px;">
-                        <h4 style="color: var(--ideolix-blue); margin-bottom: 0.5rem;">Ogunlana Yusuf Olayinka</h4>
-                        <p style="margin: 0.25rem 0;"><i class="fas fa-envelope"></i> ogunlanaysquare@gmail.com</p>
-                        <p style="margin: 0.25rem 0;"><i class="fas fa-phone"></i> +234 810 235 9048, +234 901 207 8979</p>
-                        <p style="margin: 0.25rem 0;"><i class="fab fa-linkedin"></i> LinkedIn: Ogunlana Yusuf Olayinka</p>
-                        <p style="margin: 0.25rem 0;"><strong>Founder, Ideolix Learning Hub</strong></p>
+                    <div class="founder-contact">
+                        <h4>Ogunlana Yusuf Olayinka</h4>
+                        <p><i class="fas fa-envelope"></i> ogunlanaysquare@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +234 810 235 9048, +234 901 207 8979</p>
+                        <p><strong>Founder, Ideolix Learning Hub</strong></p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Gallery Section -->
-    <section class="services">
-        <div class="container">
-            <h2>Our Learning Environment</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="image-container">
-                        <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/premium_photo-1661277643233-261801f04362.avif" 
-                             alt="Interactive Online Learning Session" class="gallery-image">
-                    </div>
-                    <h3>Interactive Learning</h3>
-                    <p>Live sessions with qualified tutors using modern teaching technology</p>
-                </div>
-                <div class="service-card">
-                    <div class="image-container">
-                        <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/premium_photo-1661720027875-4bb0a2c90f30.avif" 
-                             alt="Coding and Technology Class" class="gallery-image">
-                    </div>
-                    <h3>Technology Integration</h3>
-                    <p>Students learning coding, design, and digital skills</p>
-                </div>
-                <div class="service-card">
-                    <div class="image-container">
-                        <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/photo-1501504905252-473c47e087f8.avif" 
-                             alt="Student Success Stories" class="gallery-image">
-                    </div>
-                    <h3>Academic Excellence</h3>
-                    <p>Celebrating student achievements and progress</p>
                 </div>
             </div>
         </div>
@@ -150,12 +111,115 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Parents & Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Ideolix transformed my child's approach to learning. The teachers are exceptional and the online classes are so interactive. My son's grades improved dramatically within just 2 months!"</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Mrs. Ifafoye</h4>
+                        <p>United Kingdom</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"As a parent in Canada, I was skeptical about online learning, but Ideolix proved me wrong. The personalized attention and curriculum flexibility are outstanding. Highly recommended!"</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Mrs. Aderinkola</h4>
+                        <p>Canada</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The coding program at Ideolix is fantastic! My daughter went from beginner to building her own website in 8 weeks. The instructors are knowledgeable and patient."</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Mr. K. Jordan</h4>
+                        <p>United States</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"My twins have been with Ideolix for a year now. Their confidence and academic performance have soared. The 24/7 availability is a game-changer for our busy schedule."</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Dr. Adebayo</h4>
+                        <p>Nigeria</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The exam preparation program helped my son achieve A* in his IGCSE exams. The tutors are experts in their fields and provide excellent support. Worth every penny!"</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Mrs. Chen</h4>
+                        <p>Singapore</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Admission Section -->
-    <section id="admission" class="about" style="background: #f8fafc;">
+    <section id="admission" class="admission">
         <div class="container">
             <h2>Admission Process</h2>
-            <div class="about-grid">
-                <div class="about-card">
+            <div class="admission-grid">
+                <div class="admission-card">
                     <i class="fas fa-clipboard-check"></i>
                     <h3>Admission Requirements</h3>
                     <p>• Academic and cognitive assessment</p>
@@ -163,14 +227,14 @@
                     <p>• Computer literacy skills</p>
                     <p>• Necessary gadgets for classes</p>
                 </div>
-                <div class="about-card">
+                <div class="admission-card">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>School Schedule</h3>
                     <p><strong>24/7 Availability:</strong> Open 24 hours, 7 days a week</p>
                     <p><strong>Flexible Timing:</strong> Classes based on parent-management agreement</p>
                     <p><strong>Global Access:</strong> Study from anywhere in the world</p>
                 </div>
-                <div class="about-card">
+                <div class="admission-card">
                     <i class="fas fa-file-alt"></i>
                     <h3>Application Process</h3>
                     <p>1. Submission of application form</p>
@@ -183,36 +247,36 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-choose" class="services">
+    <section id="why-choose" class="why-choose">
         <div class="container">
             <h2>Why Choose Ideolix Learning Hub?</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <div class="why-choose-grid">
+                <div class="feature-card">
                     <i class="fas fa-home"></i>
                     <h3>Comfort & Convenience</h3>
                     <p>Study from the comfort of your home anytime, anywhere in the world through our online platform.</p>
                 </div>
-                <div class="service-card">
+                <div class="feature-card">
                     <i class="fas fa-users"></i>
                     <h3>Interactive Live Sessions</h3>
                     <p>Well-equipped tutors available for live interactive classes - no repetitive recorded sessions.</p>
                 </div>
-                <div class="service-card">
+                <div class="feature-card">
                     <i class="fas fa-book-open"></i>
                     <h3>Flexible Curriculum</h3>
                     <p>Nigerian/British/American curriculum adaptable to your location and educational needs.</p>
                 </div>
-                <div class="service-card">
+                <div class="feature-card">
                     <i class="fas fa-chart-line"></i>
                     <h3>Continuous Evaluation</h3>
                     <p>Monthly examinations and competitions to maintain high competitiveness and knowledge testing.</p>
                 </div>
-                <div class="service-card">
+                <div class="feature-card">
                     <i class="fas fa-hands-helping"></i>
                     <h3>Comprehensive Mentoring</h3>
                     <p>In and out of classroom mentoring with close academic monitoring and career guidance.</p>
                 </div>
-                <div class="service-card">
+                <div class="feature-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Safe & Secure</h3>
                     <p>Friendly and security-conscious environment with complete student information protection.</p>
@@ -234,32 +298,40 @@
                     <p><i class="fas fa-map-marker-alt"></i> 57, Unity Street, Papa Ibaño, Ogun State, Nigeria</p>
                     <p><i class="fas fa-globe"></i> Online Classes Worldwide</p>
                     
-                    <h4 style="margin-top: 2rem;">Follow Us</h4>
-                    <p><i class="fab fa-facebook"></i> Facebook: Ideolix Learning HUB</p>
-                    <p><i class="fab fa-instagram"></i> Instagram: @ideolixlearninghub</p>
-                    <p><i class="fab fa-tiktok"></i> TikTok: @ideolixlearninghub</p>
-                    <p><i class="fab fa-linkedin"></i> LinkedIn: Ideolix Learning HUB</p>
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
                 <div class="contact-form">
                     <h3>Enrollment Inquiry</h3>
-                    <form>
-                        <input type="text" placeholder="Student's Name" required>
-                        <input type="email" placeholder="Parent's Email" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                        <select required>
+                    <form action="https://formspree.io/f/xjvnzzwq" method="POST">
+                        <input type="text" name="name" placeholder="Student's Name" required>
+                        <input type="email" name="email" placeholder="Parent's Email" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <select name="grade" required>
                             <option value="">Select Grade Level</option>
                             <option value="grade1-5">Grade 1-5</option>
                             <option value="grade6-8">Grade 6-8</option>
                             <option value="grade9-12">Grade 9-12</option>
                             <option value="adult">Adult Education</option>
                         </select>
-                        <textarea placeholder="Your Message or Specific Requirements" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Submit Enrollment Inquiry</button>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Inquiry</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/2348102359048?text=Hello%20Ideolix%20Learning%20Hub!%20I%20want%20to%20enroll%20my%20child." 
+       class="whatsapp-float" target="_blank">
+       <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Footer -->
     <footer class="footer">
