@@ -470,3 +470,88 @@ body {
     flex-direction: column;
     align-items: center;
 }
+/* === OPTIMIZED IMAGE STYLES === */
+
+/* Navigation Logo */
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Logo */
+.hero-logo-container {
+    margin-bottom: 2rem;
+}
+
+.hero-logo {
+    height: 80px;
+    width: auto;
+    max-width: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Founder Photo */
+.founder-photo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.founder-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--ideolix-blue);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.founder-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Gallery Images */
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Service card image containers */
+.service-card .image-container {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
