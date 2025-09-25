@@ -1,20 +1,21 @@
-/* === IDEOLIX LEARNING HUB BRAND STYLES === */
-/* Vibrant Color Scheme Based on Your Prospectus */
+/* === IDEOLIX LEARNING HUB - GREEN & ORANGE THEME === */
+/* Vibrant, Energetic Color Scheme */
 
 :root {
-  /* Primary Brand Colors - Bright & Vibrant */
-  --ideolix-blue: #2563eb;
-  --ideolix-light-blue: #3b82f6;
-  --ideolix-bright-blue: #60a5fa;
-  --ideolix-orange: #f59e0b;
+  /* Primary Brand Colors - Green & Orange */
   --ideolix-green: #10b981;
-  --ideolix-purple: #8b5cf6;
+  --ideolix-green-light: #34d399;
+  --ideolix-green-dark: #059669;
+  --ideolix-orange: #f59e0b;
+  --ideolix-orange-light: #fbbf24;
+  --ideolix-orange-dark: #d97706;
+  --ideolix-gold: #f59e0b;
   
   /* Neutral Colors */
   --white: #ffffff;
-  --light-gray: #f8fafc;
-  --dark-gray: #334155;
-  --text-dark: #1e293b;
+  --light-bg: #f0fdf4;
+  --dark-text: #1c1917;
+  --gray-text: #4b5563;
 }
 
 /* Reset and Base Styles */
@@ -27,9 +28,9 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.7;
-  color: var(--text-dark);
+  color: var(--dark-text);
   scroll-behavior: smooth;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
 }
 
 .container {
@@ -38,15 +39,15 @@ body {
   padding: 0 20px;
 }
 
-/* === VIBRANT NAVIGATION === */
+/* === SPICY NAVIGATION === */
 .navbar {
-  background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   padding: 1rem 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
   backdrop-filter: blur(10px);
 }
 
@@ -56,11 +57,22 @@ body {
   align-items: center;
 }
 
-.nav-brand h2 {
-  color: var(--white);
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.nav-brand {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin-right: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-img {
+  height: 35px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
 }
 
 .nav-menu {
@@ -75,16 +87,18 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .nav-menu a:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* === VIBRANT HERO SECTION === */
+/* === SPICY HERO SECTION === */
 .hero {
-  background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   color: var(--white);
   padding: 180px 0 100px;
   text-align: center;
@@ -120,6 +134,26 @@ body {
   animation: fadeInUp 1s ease 0.2s both;
 }
 
+.hero-logo-container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: bounceIn 1s ease;
+}
+
+.hero-logo {
+  height: 70px;
+  width: auto;
+  max-width: 280px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
@@ -144,7 +178,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--ideolix-orange) 0%, #f97316 100%);
+  background: linear-gradient(135deg, var(--ideolix-orange) 0%, var(--ideolix-orange-light) 100%);
   color: var(--white);
 }
 
@@ -160,18 +194,18 @@ body {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #e58e0b 0%, #ea580c 100%);
+  background: linear-gradient(135deg, var(--ideolix-orange-dark) 0%, var(--ideolix-orange) 100%);
 }
 
 .btn-secondary:hover {
   background: var(--white);
-  color: var(--ideolix-blue);
+  color: var(--ideolix-green);
 }
 
-/* === VIBRANT ABOUT SECTION === */
+/* === SPICY ABOUT SECTION === */
 .about {
   padding: 100px 0;
-  background: var(--white);
+  background: linear-gradient(135deg, #ecfdf5 0%, #fffbeb 100%);
 }
 
 .about h2 {
@@ -179,7 +213,7 @@ body {
   margin-bottom: 4rem;
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -195,40 +229,54 @@ body {
   padding: 3rem 2rem;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(37, 99, 235, 0.1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
 }
 
 .about-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+  border-color: var(--ideolix-green);
 }
 
 .about-card i {
   font-size: 4rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .about-card h3 {
   margin-bottom: 1.5rem;
-  color: var(--text-dark);
+  color: var(--dark-text);
   font-size: 1.8rem;
   font-weight: 700;
 }
 
 .about-card p {
-  color: var(--dark-gray);
+  color: var(--gray-text);
   line-height: 1.8;
 }
 
-/* === VIBRANT SERVICES SECTION === */
+/* === SPICY SERVICES SECTION === */
 .services {
   padding: 100px 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #fffbeb 0%, #ecfdf5 100%);
 }
 
 .services h2 {
@@ -236,7 +284,20 @@ body {
   margin-bottom: 4rem;
   font-size: 3rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--dark-text);
+  position: relative;
+}
+
+.services h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
+  border-radius: 2px;
 }
 
 .services-grid {
@@ -250,41 +311,75 @@ body {
   padding: 2.5rem 2rem;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(37, 99, 235, 0.1);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
-  background: linear-gradient(135deg, var(--white) 0%, #f0f9ff 100%);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+  border-color: var(--ideolix-orange);
 }
 
 .service-card i {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-blue) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .service-card h3 {
   margin-bottom: 1rem;
-  color: var(--text-dark);
+  color: var(--dark-text);
   font-size: 1.6rem;
   font-weight: 700;
 }
 
 .service-card p {
-  color: var(--dark-gray);
+  color: var(--gray-text);
   line-height: 1.7;
 }
 
-/* === VIBRANT CONTACT SECTION === */
+/* === SPICY IMAGE GALLERY === */
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  border: 3px solid var(--ideolix-green);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+}
+
+/* === SPICY CONTACT SECTION === */
 .contact {
   padding: 100px 0;
-  background: var(--white);
+  background: linear-gradient(135deg, #ecfdf5 0%, #fffbeb 100%);
 }
 
 .contact h2 {
@@ -292,7 +387,7 @@ body {
   margin-bottom: 4rem;
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -306,9 +401,21 @@ body {
 .contact-info h3,
 .contact-form h3 {
   margin-bottom: 2rem;
-  color: var(--text-dark);
+  color: var(--dark-text);
   font-size: 2rem;
   font-weight: 700;
+  position: relative;
+}
+
+.contact-info h3::after,
+.contact-form h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
 }
 
 .contact-info p {
@@ -317,11 +424,11 @@ body {
   align-items: center;
   gap: 1rem;
   font-size: 1.1rem;
-  color: var(--dark-gray);
+  color: var(--gray-text);
 }
 
 .contact-info i {
-  color: var(--ideolix-blue);
+  color: var(--ideolix-green);
   font-size: 1.3rem;
   width: 30px;
 }
@@ -333,21 +440,23 @@ body {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   padding: 15px 20px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #e5e7eb;
   border-radius: 15px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: var(--light-gray);
+  background: var(--white);
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   outline: none;
-  border-color: var(--ideolix-blue);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: var(--ideolix-green);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
 }
 
 .contact-form textarea {
@@ -355,9 +464,9 @@ body {
   min-height: 120px;
 }
 
-/* === VIBRANT FOOTER === */
+/* === SPICY FOOTER === */
 .footer {
-  background: linear-gradient(135deg, var(--text-dark) 0%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--ideolix-green-dark) 0%, var(--ideolix-orange-dark) 100%);
   color: var(--white);
   text-align: center;
   padding: 3rem 0;
@@ -366,9 +475,10 @@ body {
 .footer p {
   font-size: 1.1rem;
   opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-/* === ANIMATIONS === */
+/* === SPICY ANIMATIONS === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -378,6 +488,67 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Add gradient animation to hero */
+.hero {
+  background: linear-gradient(-45deg, var(--ideolix-green), var(--ideolix-orange), var(--ideolix-green-light), var(--ideolix-orange-light));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* === SPICY SCROLL TO TOP === */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--ideolix-green) 0%, var(--ideolix-orange) 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -408,150 +579,30 @@ body {
   }
 }
 
-/* === LOGO PLACEHOLDER STYLES === */
-.logo-placeholder {
-  width: 200px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--ideolix-orange) 0%, var(--ideolix-blue) 100%);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin: 0 auto 2rem;
-}
-
-/* === IMAGE PLACEHOLDERS === */
-.image-placeholder {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dark-gray);
-  font-weight: 600;
-  margin: 1rem 0;
-}
-/* === ENHANCED STYLES === */
-
-/* Scroll to top button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--ideolix-blue) 0%, var(--ideolix-purple) 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    z-index: 1000;
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.scroll-to-top:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-/* Enhanced image placeholders */
-.image-placeholder {
-    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* === OPTIMIZED IMAGE STYLES === */
-
-/* Navigation Logo */
-.logo-img {
-    height: 40px;
-    width: auto;
-    max-width: 150px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
-/* Hero Logo */
-.hero-logo-container {
-    margin-bottom: 2rem;
-}
-
-.hero-logo {
-    height: 80px;
-    width: auto;
-    max-width: 300px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.hero-logo:hover {
-    transform: scale(1.05);
-}
-
-/* Founder Photo */
+/* === FOUNDER PHOTO STYLING === */
 .founder-photo-container {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .founder-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--ideolix-blue);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-    transition: transform 0.3s ease;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--ideolix-green);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  transition: transform 0.3s ease;
 }
 
 .founder-photo:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
+  border-color: var(--ideolix-orange);
 }
 
-/* Gallery Images */
-.image-container {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-}
-
-.gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Ensure all images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Service card image containers */
-.service-card .image-container {
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Logo hover effects */
+.logo-img:hover,
+.hero-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
