@@ -1,116 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ideolix Learning Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Welcome to Ideolix Learning Hub</h1>
-      <p>Empowering learners across continents. Over <strong>100+</strong> students enrolled.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="Ideolix Logo"/>
+      </a>
+      <div id="menuToggle" class="menu-toggle">☰</div>
+      <ul id="navMenu" class="nav-menu">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#programs">Programs</a></li>
+        <li><a class="nav-link" href="#stats">Stats</a></li>
+        <li><a class="nav-link" href="#hods">Our HODs</a></li>
+        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <!-- About Section -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      At Ideolix Learning Hub, we prepare students for international and local examinations such as GCSE, IGCSE, WAEC, GCE, and more. 
-      Our expert tutors cover core subjects including Mathematics, Science, Languages, and Coding.
-    </p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="images/logo.png" alt="Ideolix Logo" class="hero-logo"/>
+      <h1>Welcome to Ideolix Learning Hub</h1>
+      <p>Shaping global learners through technology-driven education.</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="why-us">
-    <h2>Why Choose Us</h2>
-    <div class="why-container">
-      <div class="why-card">
-        <div class="why-placeholder"></div>
-        <h3>Expert Tutors</h3>
-        <p>Experienced teachers dedicated to your success.</p>
+  <!-- Programs Section -->
+  <section class="programs" id="programs">
+    <h2>Our Programs</h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Math Learning"/>
+        <h3>Core Subjects</h3>
+        <p>We prepare students for WAEC, NECO, GCE, GCSE, and IGCSE.</p>
       </div>
-      <div class="why-card">
-        <div class="why-placeholder"></div>
-        <h3>Global Reach</h3>
-        <p>Students from different countries and continents.</p>
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Student Coding"/>
+        <h3>Tech Training</h3>
+        <p>Hands-on coding, ICT, and digital skills training.</p>
       </div>
-      <div class="why-card">
-        <div class="why-placeholder"></div>
-        <h3>Exam Preparation</h3>
-        <p>Focused coaching for WAEC, GCE, GCSE, IGCSE, and more.</p>
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Mentorship"/>
+        <h3>Special Programs</h3>
+        <p>Mentorship, critical thinking, and creativity workshops.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats" id="stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Students</p>
+      </div>
+      <div class="stat">
+        <h3>10+</h3>
+        <p>Countries</p>
+      </div>
+      <div class="stat">
+        <h3>4+</h3>
+        <p>Continents</p>
       </div>
     </div>
   </section>
 
   <!-- Meet Our HODs -->
-  <section id="hods" class="hods-section">
-    <h2 class="section-title">Meet Our HODs</h2>
-    <div class="hods-container">
-
+  <section class="hods" id="hods">
+    <h2>Meet Our HODs</h2>
+    <div class="hods-grid">
       <div class="hod-card">
-        <div class="hod-placeholder"></div>
+        <img src="images/hod-languages.jpg" alt="Ms O. Balogun"/>
         <h3>Ms O. Balogun</h3>
-        <p>Head of Languages</p>
+        <p>HOD Languages</p>
+        <small>15 years experience in language education</small>
       </div>
-
       <div class="hod-card">
-        <div class="hod-placeholder"></div>
+        <img src="images/hod-maths.jpg" alt="Mr Daniel"/>
         <h3>Mr Daniel</h3>
-        <p>Head of Mathematics</p>
+        <p>HOD Mathematics</p>
+        <small>15 years experience in teaching mathematics</small>
       </div>
-
       <div class="hod-card">
-        <div class="hod-placeholder"></div>
+        <img src="images/hod-coding.jpg" alt="Mr O. Williams"/>
         <h3>Mr O. Williams</h3>
-        <p>Head of Coding</p>
+        <p>HOD Coding</p>
+        <small>15 years experience in coding & ICT</small>
       </div>
-
       <div class="hod-card">
-        <div class="hod-placeholder"></div>
-        <h3>Mr Yusuf</h3>
-        <p>Head of Tech</p>
+        <img src="images/hod-tech.jpg" alt="Yusuf"/>
+        <h3>Yusuf</h3>
+        <p>HOD Technology</p>
+        <small>Researcher & Tech Innovator</small>
       </div>
-
     </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="founder" id="founder">
+    <img src="images/founder.jpg" alt="Founder Yusuf" class="founder-img"/>
+    <h2>Meet Our Founder</h2>
+    <p>
+      I am Yusuf, founder of Ideolix Learning Hub. My mission is to provide world-class 
+      education for learners across the globe using technology and innovative teaching.
+    </p>
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials">
+  <section class="testimonials" id="testimonials">
     <h2>What Parents Say</h2>
-    <div class="testimonial-container">
-      <div class="testimonial">
-        <p>"Ideolix has transformed my child's confidence in Maths and Science."</p>
-        <span>- Parent from Nigeria</span>
+    <div class="testimonials-grid">
+      <div class="testimonial-card green-bg">
+        <p>“Ideolix transformed my child’s performance. I strongly recommend them.”</p>
+        <h4>- Parent from UK</h4>
       </div>
-      <div class="testimonial">
-        <p>"The teachers are highly professional and supportive. My daughter loves her classes!"</p>
-        <span>- Parent from UK</span>
+      <div class="testimonial-card orange-bg">
+        <p>“The online classes are engaging and highly effective.”</p>
+        <h4>- Parent from Nigeria</h4>
+      </div>
+      <div class="testimonial-card green-bg">
+        <p>“I appreciate the mentorship and guidance given to my son.”</p>
+        <h4>- Parent from Canada</h4>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
     <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Your Email" required/>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Ideolix Learning Hub | All Rights Reserved</p>
+    <p>&copy; 2025 Ideolix Learning Hub. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
