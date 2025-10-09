@@ -20,22 +20,22 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'ideolix-green': '#10B981', // Your primary color
-                        'ideolix-orange': '#F97316', // Your secondary color
+                        'ideolix-green': '#10B981',
+                        'ideolix-orange': '#F97316',
                         'dark-text': '#1F2937',
                         'light-bg': '#f9f9f9',
-                        'card-bg-green': '#f0fdf4', // Light green
-                        'card-bg-orange': '#fff7ed', // Light orange
+                        'card-bg-green': '#f0fdf4',
+                        'card-bg-orange': '#fff7ed',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom styles for gradients and smooth effects */
+        /* Custom styles */
         html { scroll-behavior: smooth; }
         .nav-gradient {
-            background: linear-gradient(135deg, var(--tw-colors-ideolix-green) 0%, var(--tw-colors-ideolix-orange) 100%);
+            background: linear-gradient(135deg, #10B981 0%, #F97316 100%);
             transition: background 0.3s ease;
         }
         .section-padding { padding: 5rem 0; }
@@ -44,17 +44,16 @@
         .hero-slide {
             transition: opacity 1.5s ease-in-out;
             opacity: 0;
-            /* Ensure images cover the area without being stretched */
             background-size: cover; 
             background-position: center;
         }
         .hero-slide.active { opacity: 1; }
 
-        /* Program Slideshow styles (for all cards) */
+        /* Program Slideshow styles */
         .program-slideshow-container {
             position: relative;
             width: 100%;
-            height: 180px; /* Slightly taller images */
+            height: 180px;
             border-radius: 0.75rem; 
             overflow: hidden;
             margin-bottom: 1rem;
@@ -66,7 +65,6 @@
             inset: 0;
             background-size: cover; 
             background-position: center;
-            /* Text Fallback: ensures text is visible on colored slides if image fails */
             display: flex; 
             align-items: center; 
             justify-content: center;
@@ -80,20 +78,46 @@
         /* Custom Hover Effect for Cards */
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.2); /* Stronger shadow */
+            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.2);
         }
-        
-        /* New class for a slightly larger navbar logo */
-        .logo-medium {
-            height: 48px; /* Slightly increased height for better visibility */
-            width: auto;
-            object-fit: contain; /* Ensure logo is contained properly */
-        }
-        
-        /* Founder image fix: ensure it's a circle and covers the area */
+
+        /* Founder image fix */
         .founder-img {
              object-fit: cover; 
              border-radius: 9999px;
+        }
+
+        /* Video container styling */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Enhanced hero text shadow for better readability */
+        .hero-text {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Custom form styling */
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+        .form-input:focus {
+            border-color: #10B981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
     </style>
     <!-- Inter Font Import -->
@@ -104,127 +128,89 @@
     <!-- Navbar -->
     <nav id="navbar" class="fixed w-full top-0 z-50 py-3 nav-gradient shadow-lg transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <!-- Brand/Logo (USING UPLOADED ideolix LOGO.jpg) -->
+            <!-- Brand/Logo - USING YOUR GITHUB LOGO -->
             <a href="#home" class="flex items-center">
-                <img src="ideolix LOGO.jpg" 
+                <img src="https://raw.githubusercontent.com/ideolixlearninghub/ideolix-website/main/ideolix%20LOGO.jpg" 
                      alt="Ideolix Learning Hub Logo" 
-                     class="logo-medium" 
-                     
+                     class="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                     onerror="this.src='https://placehold.co/200x60/10B981/FFFFFF?text=Ideolix+Logo'"
                 >
             </a>
             
             <!-- Desktop Navigation -->
-<div class="hidden md:flex space-x-6">
-    <a href="#home" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Home</a>
-    <a href="#welcome" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Welcome</a>
-    <a href="#programs" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Programs</a>
-    <a href="#stats" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Stats</a>
-    <a href="#hods" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">HODs</a>
-    <a href="#testimonials" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Testimonials</a>
-    <a href="#admission" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Admission</a>
-    <a href="#contact" class="text-gray-800 hover:text-ideolix-orange font-medium transition duration-150">Contact</a>
-</div>
-
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-gray-200 font-medium transition duration-150">Home</a>
+                <a href="#welcome" class="text-white hover:text-gray-200 font-medium transition duration-150">Welcome</a>
+                <a href="#videos" class="text-white hover:text-gray-200 font-medium transition duration-150">Class Videos</a>
+                <a href="#programs" class="text-white hover:text-gray-200 font-medium transition duration-150">Programs</a>
+                <a href="#stats" class="text-white hover:text-gray-200 font-medium transition duration-150">Stats</a>
+                <a href="#hods" class="text-white hover:text-gray-200 font-medium transition duration-150">HODs</a>
+                <a href="#testimonials" class="text-white hover:text-gray-200 font-medium transition duration-150">Testimonials</a>
+                <a href="#admission" class="text-white hover:text-gray-200 font-medium transition duration-150">Admission</a>
+                <a href="#contact" class="text-white hover:text-gray-200 font-medium transition duration-150">Contact</a>
+            </div>
 
             <!-- Mobile Menu Button -->
             <button id="menuToggle" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
         </div>
         
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="navMenu" class="hidden md:hidden absolute top-16 right-4 bg-white shadow-xl rounded-lg p-3 w-48 text-right transition-all duration-300">
-            <a href="#home" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Home</a>
-            <a href="#welcome" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Welcome</a>
-            <a href="#programs" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Programs</a>
-            <a href="#stats" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Stats</a>
-            <a href="#hods" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">HODs</a>
-            <a href="#testimonials" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Testimonials</a>
-            <a href="#admission" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Admission</a>
-            <a href="#contact" class="block py-2 text-dark-text hover:bg-gray-100 rounded" onclick="toggleMobileMenu()">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="navMenu" class="hidden md:hidden absolute top-16 left-4 right-4 bg-white shadow-xl rounded-lg p-4 text-center transition-all duration-300">
+            <a href="#home" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Home</a>
+            <a href="#welcome" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Welcome</a>
+            <a href="#videos" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Class Videos</a>
+            <a href="#programs" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Programs</a>
+            <a href="#stats" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Stats</a>
+            <a href="#hods" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">HODs</a>
+            <a href="#testimonials" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Testimonials</a>
+            <a href="#admission" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Admission</a>
+            <a href="#contact" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Contact</a>
         </div>
     </nav>
 
     <main class="mt-16">
         
         <!-- 1. Hero Section -->
-<section id="home" class="relative h-[90vh] flex items-center justify-center text-center text-white pt-16 overflow-hidden">
-  <div id="hero-slideshow" class="absolute inset-0">
-    <!-- Slide 1 -->
-    <div class="hero-slide active absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1588072432836-e1003277cf96?fit=crop&w=1920&h=1080&q=80'); background-color:#1F2937;">
-    </div>
-    <!-- Slide 2 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1573164574393-3e2d0a0f4f3b?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-    <!-- Slide 3 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1581091012185-9b3a10e8f4c3?fit=crop&w=1920&h=1080&q=80'); background-color:#10B981;">
-    </div>
-    <!-- Slide 4 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-    <!-- Slide 5 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756627f4e?fit=crop&w=1920&h=1080&q=80'); background-color:#1F2937;">
-    </div>
-    <!-- Slide 6 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-    <!-- Slide 7 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=1920&h=1080&q=80'); background-color:#10B981;">
-    </div>
-    <!-- Slide 8 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-    <!-- Slide 9 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1549490349-866d9c733679?fit=crop&w=1920&h=1080&q=80'); background-color:#1F2937;">
-    </div>
-    <!-- Slide 10 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-    <!-- Slide 11 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1602526210352-1e0a4c8e2e4b?fit=crop&w=1920&h=1080&q=80'); background-color:#10B981;">
-    </div>
-    <!-- Slide 12 -->
-    <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
-         style="background-image:url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
-    </div>
-
-
+        <section id="home" class="relative h-[95vh] flex items-center justify-center text-center text-white pt-16 overflow-hidden">
+            <div id="hero-slideshow" class="absolute inset-0">
+                <!-- Slides -->
+                <div class="hero-slide active absolute inset-0 transition-opacity duration-1000"
+                     style="background-image:url('https://images.unsplash.com/photo-1581091012185-9b3a10e8f4c3?fit=crop&w=1920&h=1080&q=80'); background-color:#10B981;">
+                </div>
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
+                     style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=1920&h=1080&q=80'); background-color:#F97316;">
+                </div>
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000"
+                     style="background-image:url('https://images.unsplash.com/photo-1541339907198-e08756627f4e?fit=crop&w=1920&h=1080&q=80'); background-color:#1F2937;">
+                </div>
                 
-                <!-- Dark Overlay -->
-                <div class="absolute inset-0 bg-dark-text bg-opacity-60"></div>
+                <!-- Dark Overlay with gradient for better text readability -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60"></div>
             </div>
 
             <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-                <!-- Logo in Hero Section (USING UPLOADED ideolix LOGO.jpg) -->
-                <img src="ideolix LOGO.jpg" 
-                     alt="Ideolix Logo" 
-                     class="w-24 h-24 mx-auto mb-4 object-contain"
-                     <!-- UPDATED: High-contrast fallback if the file fails to load -->
-                     
-                >
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 hero-text">
                     Enrol Now @ <span class="text-ideolix-orange">IDEOLIX LEARNING HUB</span>
                 </h1>
-                <p class="text-lg sm:text-xl mb-8 font-light">
-                    Transforming Education in the Digital Age - Leveraging Technology to Education from Grade 1 to Grade 12
+                <p class="text-xl sm:text-2xl mb-8 font-light hero-text max-w-3xl mx-auto leading-relaxed">
+                    Transforming Education in the Digital Age - Leveraging Technology to Educate from Grade 1 to Grade 12
                 </p>
-                <div class="space-x-4">
-                    <a href="#admission" class="px-8 py-3 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-xl shadow-green-500/50">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#admission" class="px-8 py-4 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-2xl shadow-green-500/50 transform hover:scale-105">
                         Enroll Today
                     </a>
-                    <a href="#programs" class="px-8 py-3 bg-ideolix-orange text-white font-bold rounded-xl hover:bg-orange-700 transition duration-300 shadow-xl shadow-orange-500/50">
+                    <a href="#programs" class="px-8 py-4 bg-ideolix-orange text-white font-bold rounded-xl hover:bg-orange-700 transition duration-300 shadow-2xl shadow-orange-500/50 transform hover:scale-105">
                         View Programs
+                    </a>
+                </div>
+                <!-- Added scroll indicator -->
+                <div class="mt-12 animate-bounce">
+                    <a href="#welcome" class="text-white text-lg font-semibold hover:text-ideolix-orange transition duration-300">
+                        <i class="fas fa-chevron-down mr-2"></i>Learn More
                     </a>
                 </div>
             </div>
@@ -250,13 +236,13 @@
             </div>
         </section>
 
-        <!-- 3. Founder Welcome Section (Using direct URL photo) -->
-        <section id="welcome" class="section-padding bg-light-bg">
+        <!-- 3. Founder Welcome Section -->
+        <section id="welcome" class="section-padding bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">Welcome Address from Our Founder</h2>
                 <div class="flex flex-wrap lg:flex-nowrap gap-12 items-center justify-center">
                     
-                    <!-- Founder Photo (Using direct URL for stability) -->
+                    <!-- Founder Photo -->
                     <div class="w-full lg:w-1/3 flex justify-center" data-aos="fade-right">
                         <img src="https://media.licdn.com/dms/image/v2/D4D03AQEjUUQKHFVChA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1672432148568?e=2147483647&v=beta&t=AOtEry43atoX85F549hN9If9k7Wk_HVABXrHsEfHom0"
                          alt="Ogunlana Yusuf Olayinka - Founder" 
@@ -283,183 +269,206 @@
             </div>
         </section>
 
-        <!-- 4. Programs Section - RESTORED IMAGE SLIDESHOWS -->
+        <!-- 4. Class Videos Section -->
+        <section id="videos" class="section-padding bg-light-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">See Our Classes in Action</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Video 1 -->
+                    <div class="w-full" data-aos="fade-up">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/5pYeIOZ8oPQ?rel=0&modestbranding=1" 
+                                    title="Ideolix Learning Hub Class Session 1" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Interactive Math Class</h3>
+                    </div>
+                    
+                    <!-- Video 2 -->
+                    <div class="w-full" data-aos="fade-up" data-aos-delay="100">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/bFkfmovwh0Q?rel=0&modestbranding=1" 
+                                    title="Ideolix Learning Hub Class Session 2" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Science & Technology Session</h3>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="w-full" data-aos="fade-up" data-aos-delay="200">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/SoSMZFI7cUQ?rel=0&modestbranding=1" 
+                                    title="Ideolix Learning Hub Math Class" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Student centered math class</h3>
+                    </div>
+                </div>
+                <div class="text-center mt-8" data-aos="fade-up">
+                    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                        Experience our engaging teaching methodology and see how we make learning fun and effective for students worldwide.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Programs Section -->
         <section id="programs" class="section-padding bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">Our Programs & Courses</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
                     
-                 <!-- Program Card 1: Core Subjects -->
-<div class="w-full max-w-sm card-hover p-6 bg-card-bg-green rounded-2xl shadow-xl border border-green-300 transition duration-500" data-aos="fade-up">
-    
-    <!-- Image Slideshow for Card 1 -->
-    <div id="program-slideshow-1" class="program-slideshow-container">
-        <!-- Slide 1: Unsplash Math -->
-        <div class="program-slide active" 
-             style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?fit=crop&w=300&h=180&q=80'); background-color: #059669;">
-            CORE MATHS
-        </div>
-        <!-- Slide 2: Unsplash English -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
-            ENGLISH LITERACY
-        </div>
-        <!-- Slide 3: Unsplash Science -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1505685296765-3a2736de412f?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
-            SCIENCE LAB
-        </div>
-    </div>
+                    <!-- Program Card 1: Core Subjects -->
+                    <div class="w-full max-w-sm card-hover p-6 bg-card-bg-green rounded-2xl shadow-xl border border-green-300 transition duration-500" data-aos="fade-up">
+                        <div id="program-slideshow-1" class="program-slideshow-container">
+                            <div class="program-slide active" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?fit=crop&w=300&h=180&q=80'); background-color: #059669;">
+                                CORE MATHS
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
+                                ENGLISH LITERACY
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1505685296765-3a2736de412f?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
+                                SCIENCE LAB
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4 border-b pb-3">
+                            <i class="fas fa-graduation-cap text-4xl text-ideolix-green shadow-sm"></i>
+                            <h3 class="text-2xl font-extrabold text-dark-text">Core Subjects (G1-G12)</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-5">Essential academic mastery utilizing modern, simplified methods.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-calculator text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Mathematics:</strong> Simplified methods for total understanding.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-book-open text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">English Studies:</strong> Reading, writing, and grammar mastery.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-atom text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Sciences:</strong> Comprehensive science education (Physics, Chem, Bio).
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-globe-americas text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Languages:</strong> English, French, Yoruba fluency programs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="flex items-center space-x-3 mb-4 border-b pb-3">
-        <i class="fas fa-graduation-cap text-4xl text-ideolix-green shadow-sm"></i>
-        <h3 class="text-2xl font-extrabold text-dark-text">Core Subjects (G1-G12)</h3>
-    </div>
-    <p class="text-sm text-gray-600 mb-5">Essential academic mastery utilizing modern, simplified methods.</p>
-    
-    <!-- ENHANCED ICONS AND LIST ITEMS -->
-    <div class="space-y-2">
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-calculator text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Mathematics:</strong> Simplified methods for total understanding.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-book-open text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">English Studies:</strong> Reading, writing, and grammar mastery.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-atom text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Sciences:</strong> Comprehensive science education (Physics, Chem, Bio).
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-globe-americas text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Languages:</strong> English, French, Yoruba fluency programs.
-            </div>
-        </div>
-    </div>
-</div>
+                    <!-- Program Card 2: Technology Training -->
+                    <div class="w-full max-w-sm card-hover p-6 bg-card-bg-orange/50 rounded-2xl shadow-xl border border-orange-300 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <div id="program-slideshow-2" class="program-slideshow-container">
+                            <div class="program-slide active" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1581090700227-4c4f50b420d1?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
+                                CODING & DEV
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1603570419963-7e11e1aa0e8b?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
+                                GAME DESIGN
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
+                                DATA ANALYSIS
+                            </div>
+                        </div>
+                         <div class="flex items-center space-x-3 mb-4 border-b pb-3">
+                            <i class="fas fa-laptop-code text-4xl text-ideolix-orange shadow-sm"></i>
+                            <h3 class="text-2xl font-extrabold text-dark-text">Technology Training</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-5">Empowering students with essential digital age skills and creative tech mastery.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-code text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Coding & Development:</strong> Website & App development fundamentals.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-palette text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Design & Gaming:</strong> Graphic design, UX principles, Game development.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-database text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Data Analysis:</strong> Comprehensive data literacy and skills training.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- Program Card 2: Technology Training -->
-<div class="w-full max-w-sm card-hover p-6 bg-card-bg-orange/50 rounded-2xl shadow-xl border border-orange-300 transition duration-500" data-aos="fade-up" data-aos-delay="100">
-    
-    <!-- Image Slideshow for Card 2 -->
-    <div id="program-slideshow-2" class="program-slideshow-container">
-        <!-- Slide 1: Unsplash Coding -->
-        <div class="program-slide active" 
-             style="background-image: url('https://images.unsplash.com/photo-1581090700227-4c4f50b420d1?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
-            CODING & DEV
-        </div>
-        <!-- Slide 2: Unsplash Game Design -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1603570419963-7e11e1aa0e8b?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
-            GAME DESIGN
-        </div>
-        <!-- Slide 3: Unsplash Data Analysis -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
-            DATA ANALYSIS
-        </div>
-    </div>
-
-     <div class="flex items-center space-x-3 mb-4 border-b pb-3">
-        <i class="fas fa-laptop-code text-4xl text-ideolix-orange shadow-sm"></i>
-        <h3 class="text-2xl font-extrabold text-dark-text">Technology Training</h3>
-    </div>
-    <p class="text-sm text-gray-600 mb-5">Empowering students with essential digital age skills and creative tech mastery.</p>
-    
-    <!-- ENHANCED ICONS AND LIST ITEMS -->
-    <div class="space-y-2">
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-code text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Coding & Development:</strong> Website & App development fundamentals.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-palette text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Design & Gaming:</strong> Graphic design, UX principles, Game development.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-database text-2xl text-ideolix-green mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Data Analysis:</strong> Comprehensive data literacy and skills training.
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Program Card 3: Special Programs -->
-<div class="w-full max-w-sm card-hover p-6 bg-card-bg-green rounded-2xl shadow-xl border border-green-300 transition duration-500" data-aos="fade-up" data-aos-delay="200">
-    
-    <!-- Image Slideshow for Card 3 -->
-    <div id="program-slideshow-3" class="program-slideshow-container">
-        <!-- Slide 1: Unsplash Mentorship -->
-        <div class="program-slide active" 
-             style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=300&h=180&q=80'); background-color: #059669;">
-            CAREER MENTORSHIP
-        </div>
-        <!-- Slide 2: Unsplash Public Speaking -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
-            PUBLIC SPEAKING
-        </div>
-        <!-- Slide 3: Unsplash Writing -->
-        <div class="program-slide" 
-             style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
-            CREATIVE WRITING
-        </div>
-    </div>
-    
-    <div class="flex items-center space-x-3 mb-4 border-b pb-3">
-        <i class="fas fa-star text-4xl text-ideolix-green shadow-sm"></i>
-        <h3 class="text-2xl font-extrabold text-dark-text">Special Programs</h3>
-    </div>
-    <p class="text-sm text-gray-600 mb-5">Creative development, career guidance, and soft skill mastery.</p>
-
-    <!-- ENHANCED ICONS AND LIST ITEMS -->
-    <div class="space-y-2">
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-hands-helping text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Mentorship:</strong> Tailored guidance for high school, undergraduates, and graduates.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-microphone-alt text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Public Speaking:</strong> Podcasting and communication proficiency.
-            </div>
-        </div>
-        <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
-            <i class="fas fa-pen-fancy text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
-            <div>
-                <strong class="text-dark-text">Creative Writing:</strong> Advanced technical and creative writing techniques.
-            </div>
-        </div>
-    </div>
-</div>
-
+                    <!-- Program Card 3: Special Programs -->
+                    <div class="w-full max-w-sm card-hover p-6 bg-card-bg-green rounded-2xl shadow-xl border border-green-300 transition duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <div id="program-slideshow-3" class="program-slideshow-container">
+                            <div class="program-slide active" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=300&h=180&q=80'); background-color: #059669;">
+                                CAREER MENTORSHIP
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=300&h=180&q=80'); background-color: #F97316;">
+                                PUBLIC SPEAKING
+                            </div>
+                            <div class="program-slide" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=300&h=180&q=80'); background-color: #10B981;">
+                                CREATIVE WRITING
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 mb-4 border-b pb-3">
+                            <i class="fas fa-star text-4xl text-ideolix-green shadow-sm"></i>
+                            <h3 class="text-2xl font-extrabold text-dark-text">Special Programs</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-5">Creative development, career guidance, and soft skill mastery.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-hands-helping text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Mentorship:</strong> Tailored guidance for high school, undergraduates, and graduates.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-microphone-alt text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Public Speaking:</strong> Podcasting and communication proficiency.
+                                </div>
+                            </div>
+                            <div class="flex items-start p-2 hover:bg-white rounded-lg transition duration-200">
+                                <i class="fas fa-pen-fancy text-2xl text-ideolix-orange mr-3 mt-1 min-w-[30px] text-center"></i>
+                                <div>
+                                    <strong class="text-dark-text">Creative Writing:</strong> Advanced technical and creative writing techniques.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. HODs Section -->
+        <!-- 6. HODs Section -->
         <section id="hods" class="section-padding bg-light-bg text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-dark-text mb-12">Meet Our HODs (Heads of Department)</h2>
-                <!-- Adjusted grid for wider cards to fit biographies -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
                     
-                    <!-- HOD Card 1: Ms O. Balogun -->
+                    <!-- HOD Cards -->
                     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-2xl transition duration-300 card-hover text-left border-t-4 border-ideolix-green" data-aos="fade-up">
                         <h3 class="text-2xl font-bold text-ideolix-green">Ms O. Balogun</h3>
                         <p class="text-lg font-semibold text-gray-700 mt-1">Head of Languages</p>
@@ -469,7 +478,6 @@
                         </p>
                     </div>
                     
-                    <!-- HOD Card 2: Mr Daniel -->
                     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-2xl transition duration-300 card-hover text-left border-t-4 border-ideolix-orange" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="text-2xl font-bold text-ideolix-green">Mr Daniel</h3>
                         <p class="text-lg font-semibold text-gray-700 mt-1">Head of Mathematics</p>
@@ -479,7 +487,6 @@
                         </p>
                     </div>
 
-                    <!-- HOD Card 3: Mr O. Williams -->
                     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-2xl transition duration-300 card-hover text-left border-t-4 border-ideolix-orange" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="text-2xl font-bold text-ideolix-green">Mr O. Williams</h3>
                         <p class="text-lg font-semibold text-gray-700 mt-1">Head of Coding</p>
@@ -489,7 +496,6 @@
                         </p>
                     </div>
                     
-                    <!-- HOD Card 4: Ogunlana Yusuf Olayinka (Founder) -->
                     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-2xl transition duration-300 card-hover text-left border-t-4 border-ideolix-green" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="text-2xl font-bold text-ideolix-green">Ogunlana Yusuf Olayinka</h3>
                         <p class="text-lg font-semibold text-gray-700 mt-1">Head of Technology (Founder)</p>
@@ -502,27 +508,25 @@
             </div>
         </section>
 
-        <!-- 6. Testimonials Section -->
+        <!-- 7. Testimonials Section -->
         <section id="testimonials" class="section-padding bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">What Parents & Students Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                     
-                    <!-- Testimonial Card 1 -->
+                    <!-- Testimonial Cards -->
                     <div class="w-full max-w-sm p-6 rounded-xl shadow-xl transition duration-300 bg-card-bg-green border border-green-200" data-aos="fade-up">
                         <p class="italic text-gray-800 mb-4">"Ideolix transformed my child's approach to learning. The teachers are exceptional and the online classes are so interactive. My son's grades improved dramatically within just 2 months!"</p>
                         <h4 class="font-semibold text-ideolix-green">Mrs. Ifafoye</h4>
                         <p class="text-sm text-gray-500">United Kingdom</p>
                     </div>
 
-                    <!-- Testimonial Card 2 -->
                     <div class="w-full max-w-sm p-6 rounded-xl shadow-xl transition duration-300 bg-card-bg-orange/50 border border-orange-200" data-aos="fade-up" data-aos-delay="100">
                         <p class="italic text-gray-800 mb-4">"As a parent in Canada, I was skeptical about online learning, but Ideolix proved me wrong. The personalized attention and curriculum flexibility are outstanding. Highly recommended!"</p>
                         <h4 class="font-semibold text-ideolix-green">Mrs. Aderinkola</h4>
                         <p class="text-sm text-gray-500">Canada</p>
                     </div>
 
-                    <!-- Testimonial Card 3 -->
                     <div class="w-full max-w-sm p-6 rounded-xl shadow-xl transition duration-300 bg-card-bg-green border border-green-200" data-aos="fade-up" data-aos-delay="200">
                         <p class="italic text-gray-800 mb-4">"The coding program at Ideolix is fantastic! My daughter went from beginner to building her own website in 8 weeks. The instructors are knowledgeable and patient."</p>
                         <h4 class="font-semibold text-ideolix-green">Mr. K. Jordan</h4>
@@ -533,13 +537,13 @@
             </div>
         </section>
 
-        <!-- 7. Admission Section -->
+        <!-- 8. Admission Section -->
         <section id="admission" class="section-padding bg-light-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">Admission Process</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
                     
-                    <!-- Admission Card 1 -->
+                    <!-- Admission Cards -->
                     <div class="w-full max-w-xs p-6 bg-card-bg-green rounded-xl shadow-lg border-t-4 border-ideolix-green" data-aos="fade-up">
                         <h3 class="text-xl font-bold text-dark-text mb-3">Admission Requirements</h3>
                         <ul class="text-gray-700 space-y-2 list-disc list-inside">
@@ -549,14 +553,12 @@
                         </ul>
                     </div>
 
-                    <!-- Admission Card 2 -->
                     <div class="w-full max-w-xs p-6 bg-card-bg-orange/50 rounded-xl shadow-lg border-t-4 border-ideolix-orange" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="text-xl font-bold text-dark-text mb-3">School Schedule</h3>
                         <p class="text-lg font-semibold text-gray-700">24/7 Availability</p>
                         <p class="text-gray-500">Flexible classes to fit your timezone and schedule.</p>
                     </div>
                     
-                    <!-- Admission Card 3 -->
                     <div class="w-full max-w-xs p-6 bg-card-bg-green rounded-xl shadow-lg border-t-4 border-ideolix-green" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="text-xl font-bold text-dark-text mb-3">Application Process</h3>
                         <ol class="text-gray-700 space-y-2 list-decimal list-inside">
@@ -570,37 +572,105 @@
             </div>
         </section>
 
-        <!-- 8. Contact Section -->
-        <section id="contact" class="section-padding bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-12">Contact Ideolix Learning Hub</h2>
-                <div class="flex flex-wrap lg:flex-nowrap gap-12 justify-center">
-                    
-                    <!-- Contact Info -->
-                    <div class="w-full lg:w-1/3 space-y-4 p-6 bg-light-bg rounded-xl shadow-lg" data-aos="fade-right">
-                        <h3 class="text-2xl font-bold text-ideolix-green mb-4">Get in Touch</h3>
-                        <p class="flex items-center text-gray-700"><i class="fas fa-envelope text-ideolix-orange mr-3 w-5"></i> ideolixlearninghub@gmail.com</p>
-                        <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 810 235 9048</p>
-                        <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 901 207 8979</p>
-                        <p class="flex items-start text-gray-700"><i class="fas fa-map-marker-alt text-ideolix-orange mr-3 w-5 pt-1"></i> 11 Independent Layout, Papa Ibafo, Ogun State, Nigeria</p>
-                        <p class="flex items-center text-gray-700"><i class="fas fa-globe text-ideolix-orange mr-3 w-5"></i> Online Classes Worldwide</p>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="w-full lg:w-2/3 p-6 bg-white rounded-xl shadow-xl border border-gray-100" data-aos="fade-left">
-                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
-                            <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ideolix-green focus:border-ideolix-green transition duration-150">
-                            <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ideolix-green focus:border-ideolix-green transition duration-150">
-                            <textarea placeholder="Your Message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ideolix-green focus:border-ideolix-green transition duration-150"></textarea>
-                            <button type="submit" id="submit-btn" class="w-full px-6 py-3 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-md">
-                                Send Message
-                            </button>
-                        </form>
-                        <div id="status-message" class="mt-4 text-center font-semibold text-base hidden p-3 rounded-lg"></div>
-                    </div>
+        <!-- 9. Contact Section - WORKING FORMSFREE FORM -->
+<section id="contact" class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12">Contact Ideolix Learning Hub</h2>
+        <div class="flex flex-wrap lg:flex-nowrap gap-12 justify-center">
+            
+            <!-- Contact Info -->
+            <div class="w-full lg:w-1/3 space-y-4 p-6 bg-light-bg rounded-xl shadow-lg" data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-ideolix-green mb-4">Get in Touch</h3>
+                <p class="flex items-center text-gray-700"><i class="fas fa-envelope text-ideolix-orange mr-3 w-5"></i> ideolixlearninghub@gmail.com</p>
+                <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 810 235 9048</p>
+                <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 901 207 8979</p>
+                <p class="flex items-start text-gray-700"><i class="fas fa-map-marker-alt text-ideolix-orange mr-3 w-5 pt-1"></i> 11 Independent Layout, Papa Ibafo, Ogun State, Nigeria</p>
+                <p class="flex items-center text-gray-700"><i class="fas fa-globe text-ideolix-orange mr-3 w-5"></i> Online Classes Worldwide</p>
+                
+                <!-- Quick Action Buttons -->
+                <div class="pt-4 space-y-3">
+                    <a href="https://wa.me/2348102359048" 
+                       class="flex items-center justify-center w-full bg-[#25D366] text-white py-3 rounded-lg hover:bg-green-600 transition duration-300 font-semibold"
+                       target="_blank">
+                        <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                    </a>
+                    <a href="#admission" 
+                       class="flex items-center justify-center w-full bg-ideolix-green text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
+                        <i class="fas fa-user-graduate mr-2"></i> Start Admission Process
+                    </a>
                 </div>
             </div>
-        </section>
+
+            <!-- Beautiful Working Contact Form -->
+            <div class="w-full lg:w-2/3 p-8 bg-gradient-to-br from-card-bg-green to-card-bg-orange/30 rounded-xl shadow-xl border border-gray-100" data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-ideolix-green mb-2">Send Us a Message</h3>
+                <p class="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours:</p>
+                
+                <!-- Formspree Form - UPDATED WITH YOUR FORMSPREE URL -->
+                <form id="contact-form" action="https://formspree.io/f/xldppdwp" method="POST" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" name="name" required 
+                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                   placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                            <input type="email" name="email" required 
+                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                   placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" name="phone"
+                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                   placeholder="+234 810 235 9048">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Student Grade Level</label>
+                            <select name="grade-level" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
+                                <option value="">Select Grade Level</option>
+                                <option value="Grade 1-3">Grade 1-3</option>
+                                <option value="Grade 4-6">Grade 4-6</option>
+                                <option value="Grade 7-9">Grade 7-9</option>
+                                <option value="Grade 10-12">Grade 10-12</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Interested Program</label>
+                        <select name="program" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
+                            <option value="">Select Program</option>
+                            <option value="Core Subjects">Core Subjects</option>
+                            <option value="Technology Training">Technology Training</option>
+                            <option value="Special Programs">Special Programs</option>
+                            <option value="Multiple Programs">Multiple Programs</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Your Message *</label>
+                        <textarea name="message" required rows="4"
+                                  class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                  placeholder="Tell us about your educational needs and any specific questions..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full px-6 py-4 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                    </button>
+                </form>
+                
+                <div id="status-message" class="mt-4 text-center font-semibold text-base hidden p-3 rounded-lg"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
     </main>
 
@@ -655,48 +725,45 @@
         // --- Navbar background on scroll ---
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                // Change to a solid color when scrolling down
                 navbar.classList.remove('nav-gradient');
                 navbar.classList.add('bg-ideolix-green', 'bg-opacity-95', 'backdrop-blur-sm');
             } else {
-                // Return to gradient at the top
                 navbar.classList.add('nav-gradient');
                 navbar.classList.remove('bg-ideolix-green', 'bg-opacity-95', 'backdrop-blur-sm');
             }
         });
 
-        // --- Form Submission Handler (Replaces alert()) ---
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            const form = document.getElementById('contact-form');
-            const submitBtn = document.getElementById('submit-btn');
-            const statusMessage = document.getElementById('status-message');
+        // --- Form Success Handler ---
+        const contactForm = document.getElementById('contact-form');
+        const statusMessage = document.getElementById('status-message');
 
-            // Simulate form submission process
-            submitBtn.textContent = 'Sending...';
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
             submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-50');
-            statusMessage.classList.add('hidden');
-
+            
+            // Formspree will handle the submission
+            // You can add additional success handling if needed
+            
             setTimeout(() => {
-                // Success feedback
-                statusMessage.textContent = 'Thank you! Your inquiry has been sent. We will contact you within 24 hours.';
+                statusMessage.textContent = 'Thank you! Your message has been sent successfully. We will contact you within 24 hours.';
                 statusMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
                 statusMessage.classList.add('bg-green-100', 'text-green-700');
                 
-                // Reset form and button
-                form.reset();
-                submitBtn.textContent = 'Send Message';
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-50');
-
-                // Hide message after a few seconds
+                // Reset button after a delay
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> Send Message';
+                    submitBtn.disabled = false;
+                }, 3000);
+                
+                // Hide message after 7 seconds
                 setTimeout(() => {
                     statusMessage.classList.add('hidden');
                 }, 7000);
-
-            }, 2000); // 2 second delay simulation
-        }
+            }, 1000);
+        });
 
         // --- Stats counter animation ---
         const startCounter = (entries, observer) => {
@@ -707,7 +774,6 @@
                         const target = +counter.getAttribute('data-count');
                         const updateCount = () => {
                             const count = +counter.innerText.replace('+', '');
-                            // Increase speed of count
                             const increment = target / 50; 
                             if(count < target) {
                                 counter.innerText = Math.ceil(count + increment) + '+';
@@ -733,23 +799,19 @@
         let heroSlideIndex = 0;
         const heroSlides = document.querySelectorAll('#hero-slideshow .hero-slide');
         const showHeroSlides = () => {
-            // Hide all slides
             heroSlides.forEach(slide => slide.classList.remove('active'));
             
-            // Move to next slide
             heroSlideIndex++;
             if(heroSlideIndex >= heroSlides.length) {
-                heroSlideIndex = 0; // Loop back to the start
+                heroSlideIndex = 0;
             }
             
-            // Show current slide
             heroSlides[heroSlideIndex].classList.add('active');
             
-            // Set delay for next transition
             setTimeout(showHeroSlides, 7000); 
         };
         
-        // --- Program Slideshows (Generic Function) ---
+        // --- Program Slideshows ---
         const initializeProgramSlideshows = () => {
             const containers = document.querySelectorAll('.program-slideshow-container');
             
@@ -757,123 +819,35 @@
                 const slides = container.querySelectorAll('.program-slide');
                 if (slides.length === 0) return;
 
-                // Ensure the first slide is visible initially
-                slides[0].classList.add('active'); 
-
+                slides[0].classList.add('active');
                 let slideIndex = 0;
 
                 const showSlides = () => {
-                    // Hide all slides
                     slides.forEach(slide => slide.classList.remove('active'));
                     
-                    // Move to next slide
                     slideIndex++;
                     if(slideIndex >= slides.length) {
-                        slideIndex = 0; // Loop back to the start
+                        slideIndex = 0;
                     }
                     
-                    // Show current slide
                     slides[slideIndex].classList.add('active');
                     
-                    // Set delay for next transition (5 seconds)
-                    setTimeout(showSlides, 5000); 
+                    setTimeout(showSlides, 5000);
                 };
                 
-                // Start the slideshow for this container after the initial delay
                 setTimeout(showSlides, 5000);
             });
         };
 
-
         // Start the slideshows after the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            // Only run if there are slides
             if (heroSlides.length > 0) {
-                // Ensure the first slide is active immediately (already done in HTML, but safe to repeat)
-                heroSlides[0].classList.add('active'); 
-                setTimeout(showHeroSlides, 7000); // Start the rotation
+                heroSlides[0].classList.add('active');
+                setTimeout(showHeroSlides, 7000);
             }
 
             initializeProgramSlideshows();
         });
-
-    
-<!-- Status message for form submission -->
-<div id="status-message" class="mt-4 text-center font-semibold text-base hidden"></div>
-
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark-text text-white py-6 text-center">
-    &copy; 2025 Ideolix Learning Hub. All rights reserved.
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-    // Initialize AOS animations
-    AOS.init({ duration: 1000, once: true });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    function toggleMobileMenu() {
-        navMenu.classList.toggle('hidden');
-    }
-    menuToggle.addEventListener('click', toggleMobileMenu);
-
-    // Hero Slideshow
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    let heroIndex = 0;
-    setInterval(() => {
-        heroSlides[heroIndex].classList.remove('active');
-        heroIndex = (heroIndex + 1) % heroSlides.length;
-        heroSlides[heroIndex].classList.add('active');
-    }, 5000);
-
-    // Program Card Slideshows
-    function initProgramSlideshow(id) {
-        const slides = document.querySelectorAll(`#${id} .program-slide`);
-        let index = 0;
-        setInterval(() => {
-            slides[index].classList.remove('active');
-            index = (index + 1) % slides.length;
-            slides[index].classList.add('active');
-        }, 3000);
-    }
-    initProgramSlideshow('program-slideshow-1');
-    initProgramSlideshow('program-slideshow-2');
-    initProgramSlideshow('program-slideshow-3');
-
-    // Contact Form Submission (Simple frontend simulation)
-    function handleContactSubmit(event) {
-        event.preventDefault();
-        const status = document.getElementById('status-message');
-        status.textContent = 'Your message has been sent successfully!';
-        status.classList.remove('hidden');
-        status.classList.add('text-ideolix-green');
-        event.target.reset();
-    }
-
-    // Animated Stats Counter
-    const counters = document.querySelectorAll('.stat-card');
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-count');
-            const count = +counter.innerText.replace('+','');
-            const increment = target / 100;
-            if(count < target) {
-                counter.innerText = `${Math.ceil(count + increment)}+`;
-                setTimeout(updateCount, 30);
-            } else {
-                counter.innerText = `${target}+`;
-            }
-        };
-        updateCount();
-    });
-</script>
-
+    </script>
 </body>
 </html>
