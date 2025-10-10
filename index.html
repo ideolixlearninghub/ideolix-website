@@ -87,7 +87,7 @@
              border-radius: 9999px;
         }
 
-        /* Video container styling */
+        /* Video container styling - ENHANCED FOR BETTER ENGAGEMENT */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -95,6 +95,7 @@
             overflow: hidden;
             border-radius: 0.75rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #000;
         }
         .video-container iframe {
             position: absolute;
@@ -119,6 +120,15 @@
             border-color: #10B981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
+
+        /* Blog post styling */
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
     </style>
     <!-- Inter Font Import -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -137,12 +147,13 @@
                 >
             </a>
             
-            <!-- Desktop Navigation -->
+            <!-- Desktop Navigation - ADDED BLOG LINK -->
             <div class="hidden md:flex space-x-6">
                 <a href="#home" class="text-white hover:text-gray-200 font-medium transition duration-150">Home</a>
                 <a href="#welcome" class="text-white hover:text-gray-200 font-medium transition duration-150">Welcome</a>
                 <a href="#videos" class="text-white hover:text-gray-200 font-medium transition duration-150">Class Videos</a>
                 <a href="#programs" class="text-white hover:text-gray-200 font-medium transition duration-150">Programs</a>
+                <a href="#blog" class="text-white hover:text-gray-200 font-medium transition duration-150">Blog</a>
                 <a href="#stats" class="text-white hover:text-gray-200 font-medium transition duration-150">Stats</a>
                 <a href="#hods" class="text-white hover:text-gray-200 font-medium transition duration-150">HODs</a>
                 <a href="#testimonials" class="text-white hover:text-gray-200 font-medium transition duration-150">Testimonials</a>
@@ -158,12 +169,13 @@
             </button>
         </div>
         
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu - ADDED BLOG LINK -->
         <div id="navMenu" class="hidden md:hidden absolute top-16 left-4 right-4 bg-white shadow-xl rounded-lg p-4 text-center transition-all duration-300">
             <a href="#home" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Home</a>
             <a href="#welcome" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Welcome</a>
             <a href="#videos" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Class Videos</a>
             <a href="#programs" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Programs</a>
+            <a href="#blog" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Blog</a>
             <a href="#stats" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Stats</a>
             <a href="#hods" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">HODs</a>
             <a href="#testimonials" class="block py-3 text-dark-text hover:bg-ideolix-green hover:text-white rounded-lg font-medium transition duration-200" onclick="toggleMobileMenu()">Testimonials</a>
@@ -269,45 +281,48 @@
             </div>
         </section>
 
-        <!-- 4. Class Videos Section -->
+        <!-- 4. Class Videos Section - ENHANCED FOR BETTER ENGAGEMENT -->
         <section id="videos" class="section-padding bg-light-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">See Our Classes in Action</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <!-- Video 1 -->
+                    <!-- Video 1 - ENHANCED EMBED -->
                     <div class="w-full" data-aos="fade-up">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/5pYeIOZ8oPQ?rel=0&modestbranding=1" 
-                                    title="Ideolix Learning Hub Class Session 1" 
+                            <iframe src="https://www.youtube.com/embed/5pYeIOZ8oPQ?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                                    title="Ideolix Learning Hub Interactive Math Class" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                             </iframe>
                         </div>
                         <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Interactive Math Class</h3>
+                        <p class="text-gray-600 text-center mt-2">Watch how we make complex math concepts engaging and understandable</p>
                     </div>
                     
-                    <!-- Video 2 -->
+                    <!-- Video 2 - ENHANCED EMBED -->
                     <div class="w-full" data-aos="fade-up" data-aos-delay="100">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/bFkfmovwh0Q?rel=0&modestbranding=1" 
-                                    title="Ideolix Learning Hub Class Session 2" 
+                            <iframe src="https://www.youtube.com/embed/bFkfmovwh0Q?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                                    title="Ideolix Learning Hub Science & Technology Session" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                             </iframe>
                         </div>
                         <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Science & Technology Session</h3>
+                        <p class="text-gray-600 text-center mt-2">Experience our hands-on approach to science and technology education</p>
                     </div>
 
-                    <!-- Video 3 -->
+                    <!-- Video 3 - ENHANCED EMBED -->
                     <div class="w-full" data-aos="fade-up" data-aos-delay="200">
                         <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/SoSMZFI7cUQ?rel=0&modestbranding=1" 
-                                    title="Ideolix Learning Hub Math Class" 
+                            <iframe src="https://www.youtube.com/embed/SoSMZFI7cUQ?rel=0&modestbranding=1&controls=1&showinfo=0" 
+                                    title="Ideolix Learning Hub Student-Centered Math Class" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
                             </iframe>
                         </div>
-                        <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Student centered math class</h3>
+                        <h3 class="text-xl font-bold mt-4 text-center text-ideolix-green">Student-Centered Math Class</h3>
+                        <p class="text-gray-600 text-center mt-2">See our personalized approach to mathematics education</p>
                     </div>
                 </div>
                 <div class="text-center mt-8" data-aos="fade-up">
@@ -318,12 +333,89 @@
             </div>
         </section>
 
-        <!-- 5. Programs Section -->
-        <section id="programs" class="section-padding bg-white">
+        <!-- 5. NEW: Blog Section with Medium Integration -->
+        <section id="blog" class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4">Educational Insights from Our Experts</h2>
+                <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+                    Discover proven strategies, teaching methodologies, and educational resources from our experienced educators.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden blog-card border border-gray-100" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?fit=crop&w=400&h=250&q=80" 
+                             alt="Math Confidence" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-ideolix-green font-semibold bg-green-50 px-3 py-1 rounded-full">Mathematics</span>
+                            <h3 class="text-xl font-bold mt-3 mb-3">Turning Math Anxiety into Confidence</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                Discover how we transform math anxiety into excitement with our proven gamification techniques and real-world applications that build lasting confidence.
+                            </p>
+                            <a href="https://medium.com/@ideolixlearninghub/turning-math-anxiety-into-confidence-5ea881f2618e" 
+                               class="text-ideolix-orange font-semibold hover:text-orange-700 flex items-center text-sm"
+                               target="_blank">
+                                Read on Medium <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden blog-card border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fit=crop&w=400&h=250&q=80" 
+                             alt="Interactive Learning" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-blue-600 font-semibold bg-blue-50 px-3 py-1 rounded-full">Teaching Methods</span>
+                            <h3 class="text-xl font-bold mt-3 mb-3">Transforming Complex Math Concepts</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                Learn how we break down complex mathematical concepts into engaging, interactive learning experiences that students love and understand.
+                            </p>
+                            <a href="https://medium.com/@ideolixlearninghub/discover-how-we-transform-complex-math-concepts-into-engaging-interactive-learning-experiences-b4aa82745fb8" 
+                               class="text-ideolix-orange font-semibold hover:text-orange-700 flex items-center text-sm"
+                               target="_blank">
+                                Read on Medium <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden blog-card border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://plus.unsplash.com/premium_photo-1661485132199-5846637137d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Parent Support" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-purple-600 font-semibold bg-purple-50 px-3 py-1 rounded-full">Parenting</span>
+                            <h3 class="text-xl font-bold mt-3 mb-3">Empowering Parents, Empowering Learners</h3>
+                            <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                                Practical strategies for parents to support their child's academic journey while fostering independence and lifelong learning skills.
+                            </p>
+                            <a href="https://medium.com/@ideolixlearninghub/empowering-parents-empowering-learners-f5055efb2438" 
+                               class="text-ideolix-orange font-semibold hover:text-orange-700 flex items-center text-sm"
+                               target="_blank">
+                                Read on Medium <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://medium.com/@ideolixlearninghub" 
+                       class="px-8 py-3 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-lg"
+                       target="_blank">
+                        Visit Our Full Blog on Medium
+                    </a>
+                    <p class="text-gray-600 mt-4 text-sm">Read all our educational articles, teaching strategies, and learning resources</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Programs Section -->
+        <section id="programs" class="section-padding bg-light-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">Our Programs & Courses</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
                     
+                    <!-- Program Cards (same as before) -->
                     <!-- Program Card 1: Core Subjects -->
                     <div class="w-full max-w-sm card-hover p-6 bg-card-bg-green rounded-2xl shadow-xl border border-green-300 transition duration-500" data-aos="fade-up">
                         <div id="program-slideshow-1" class="program-slideshow-container">
@@ -462,13 +554,13 @@
             </div>
         </section>
 
-        <!-- 6. HODs Section -->
-        <section id="hods" class="section-padding bg-light-bg text-center">
+        <!-- 7. HODs Section -->
+        <section id="hods" class="section-padding bg-white text-center">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-dark-text mb-12">Meet Our HODs (Heads of Department)</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
                     
-                    <!-- HOD Cards -->
+                    <!-- HOD Cards (same as before) -->
                     <div class="w-full max-w-lg p-6 bg-white rounded-xl shadow-2xl transition duration-300 card-hover text-left border-t-4 border-ideolix-green" data-aos="fade-up">
                         <h3 class="text-2xl font-bold text-ideolix-green">Ms O. Balogun</h3>
                         <p class="text-lg font-semibold text-gray-700 mt-1">Head of Languages</p>
@@ -508,13 +600,13 @@
             </div>
         </section>
 
-        <!-- 7. Testimonials Section -->
-        <section id="testimonials" class="section-padding bg-white">
+        <!-- 8. Testimonials Section -->
+        <section id="testimonials" class="section-padding bg-light-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">What Parents & Students Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                     
-                    <!-- Testimonial Cards -->
+                    <!-- Testimonial Cards (same as before) -->
                     <div class="w-full max-w-sm p-6 rounded-xl shadow-xl transition duration-300 bg-card-bg-green border border-green-200" data-aos="fade-up">
                         <p class="italic text-gray-800 mb-4">"Ideolix transformed my child's approach to learning. The teachers are exceptional and the online classes are so interactive. My son's grades improved dramatically within just 2 months!"</p>
                         <h4 class="font-semibold text-ideolix-green">Mrs. Ifafoye</h4>
@@ -537,13 +629,13 @@
             </div>
         </section>
 
-        <!-- 8. Admission Section -->
-        <section id="admission" class="section-padding bg-light-bg">
+        <!-- 9. Admission Section -->
+        <section id="admission" class="section-padding bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-bold text-center mb-12">Admission Process</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
                     
-                    <!-- Admission Cards -->
+                    <!-- Admission Cards (same as before) -->
                     <div class="w-full max-w-xs p-6 bg-card-bg-green rounded-xl shadow-lg border-t-4 border-ideolix-green" data-aos="fade-up">
                         <h3 class="text-xl font-bold text-dark-text mb-3">Admission Requirements</h3>
                         <ul class="text-gray-700 space-y-2 list-disc list-inside">
@@ -572,105 +664,104 @@
             </div>
         </section>
 
-        <!-- 9. Contact Section - WORKING FORMSFREE FORM -->
-<section id="contact" class="section-padding bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12">Contact Ideolix Learning Hub</h2>
-        <div class="flex flex-wrap lg:flex-nowrap gap-12 justify-center">
-            
-            <!-- Contact Info -->
-            <div class="w-full lg:w-1/3 space-y-4 p-6 bg-light-bg rounded-xl shadow-lg" data-aos="fade-right">
-                <h3 class="text-2xl font-bold text-ideolix-green mb-4">Get in Touch</h3>
-                <p class="flex items-center text-gray-700"><i class="fas fa-envelope text-ideolix-orange mr-3 w-5"></i> ideolixlearninghub@gmail.com</p>
-                <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 810 235 9048</p>
-                <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 901 207 8979</p>
-                <p class="flex items-start text-gray-700"><i class="fas fa-map-marker-alt text-ideolix-orange mr-3 w-5 pt-1"></i> 11 Independent Layout, Papa Ibafo, Ogun State, Nigeria</p>
-                <p class="flex items-center text-gray-700"><i class="fas fa-globe text-ideolix-orange mr-3 w-5"></i> Online Classes Worldwide</p>
-                
-                <!-- Quick Action Buttons -->
-                <div class="pt-4 space-y-3">
-                    <a href="https://wa.me/2348102359048" 
-                       class="flex items-center justify-center w-full bg-[#25D366] text-white py-3 rounded-lg hover:bg-green-600 transition duration-300 font-semibold"
-                       target="_blank">
-                        <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
-                    </a>
-                    <a href="#admission" 
-                       class="flex items-center justify-center w-full bg-ideolix-green text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
-                        <i class="fas fa-user-graduate mr-2"></i> Start Admission Process
-                    </a>
+        <!-- 10. Contact Section -->
+        <section id="contact" class="section-padding bg-light-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">Contact Ideolix Learning Hub</h2>
+                <div class="flex flex-wrap lg:flex-nowrap gap-12 justify-center">
+                    
+                    <!-- Contact Info -->
+                    <div class="w-full lg:w-1/3 space-y-4 p-6 bg-white rounded-xl shadow-lg" data-aos="fade-right">
+                        <h3 class="text-2xl font-bold text-ideolix-green mb-4">Get in Touch</h3>
+                        <p class="flex items-center text-gray-700"><i class="fas fa-envelope text-ideolix-orange mr-3 w-5"></i> ideolixlearninghub@gmail.com</p>
+                        <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 810 235 9048</p>
+                        <p class="flex items-center text-gray-700"><i class="fas fa-phone text-ideolix-orange mr-3 w-5"></i> +234 901 207 8979</p>
+                        <p class="flex items-start text-gray-700"><i class="fas fa-map-marker-alt text-ideolix-orange mr-3 w-5 pt-1"></i> 11 Independent Layout, Papa Ibafo, Ogun State, Nigeria</p>
+                        <p class="flex items-center text-gray-700"><i class="fas fa-globe text-ideolix-orange mr-3 w-5"></i> Online Classes Worldwide</p>
+                        
+                        <!-- Quick Action Buttons -->
+                        <div class="pt-4 space-y-3">
+                            <a href="https://wa.me/2348102359048" 
+                               class="flex items-center justify-center w-full bg-[#25D366] text-white py-3 rounded-lg hover:bg-green-600 transition duration-300 font-semibold"
+                               target="_blank">
+                                <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                            </a>
+                            <a href="#admission" 
+                               class="flex items-center justify-center w-full bg-ideolix-green text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
+                                <i class="fas fa-user-graduate mr-2"></i> Start Admission Process
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="w-full lg:w-2/3 p-8 bg-gradient-to-br from-card-bg-green to-card-bg-orange/30 rounded-xl shadow-xl border border-gray-100" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold text-ideolix-green mb-2">Send Us a Message</h3>
+                        <p class="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours:</p>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xldppdwp" method="POST" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                    <input type="text" name="name" required 
+                                           class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                           placeholder="Your full name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                    <input type="email" name="email" required 
+                                           class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                           placeholder="your.email@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" name="phone"
+                                           class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                           placeholder="+234 810 235 9048">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Student Grade Level</label>
+                                    <select name="grade-level" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
+                                        <option value="">Select Grade Level</option>
+                                        <option value="Grade 1-3">Grade 1-3</option>
+                                        <option value="Grade 4-6">Grade 4-6</option>
+                                        <option value="Grade 7-9">Grade 7-9</option>
+                                        <option value="Grade 10-12">Grade 10-12</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Interested Program</label>
+                                <select name="program" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
+                                    <option value="">Select Program</option>
+                                    <option value="Core Subjects">Core Subjects</option>
+                                    <option value="Technology Training">Technology Training</option>
+                                    <option value="Special Programs">Special Programs</option>
+                                    <option value="Multiple Programs">Multiple Programs</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Message *</label>
+                                <textarea name="message" required rows="4"
+                                          class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
+                                          placeholder="Tell us about your educational needs and any specific questions..."></textarea>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full px-6 py-4 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                        
+                        <div id="status-message" class="mt-4 text-center font-semibold text-base hidden p-3 rounded-lg"></div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Beautiful Working Contact Form -->
-            <div class="w-full lg:w-2/3 p-8 bg-gradient-to-br from-card-bg-green to-card-bg-orange/30 rounded-xl shadow-xl border border-gray-100" data-aos="fade-left">
-                <h3 class="text-2xl font-bold text-ideolix-green mb-2">Send Us a Message</h3>
-                <p class="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours:</p>
-                
-                <!-- Formspree Form - UPDATED WITH YOUR FORMSPREE URL -->
-                <form id="contact-form" action="https://formspree.io/f/xldppdwp" method="POST" class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                            <input type="text" name="name" required 
-                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
-                                   placeholder="Your full name">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                            <input type="email" name="email" required 
-                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
-                                   placeholder="your.email@example.com">
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                            <input type="tel" name="phone"
-                                   class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
-                                   placeholder="+234 810 235 9048">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Student Grade Level</label>
-                            <select name="grade-level" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
-                                <option value="">Select Grade Level</option>
-                                <option value="Grade 1-3">Grade 1-3</option>
-                                <option value="Grade 4-6">Grade 4-6</option>
-                                <option value="Grade 7-9">Grade 7-9</option>
-                                <option value="Grade 10-12">Grade 10-12</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Interested Program</label>
-                        <select name="program" class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green">
-                            <option value="">Select Program</option>
-                            <option value="Core Subjects">Core Subjects</option>
-                            <option value="Technology Training">Technology Training</option>
-                            <option value="Special Programs">Special Programs</option>
-                            <option value="Multiple Programs">Multiple Programs</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Your Message *</label>
-                        <textarea name="message" required rows="4"
-                                  class="w-full px-4 py-3 form-input rounded-lg focus:ring-2 focus:ring-ideolix-green"
-                                  placeholder="Tell us about your educational needs and any specific questions..."></textarea>
-                    </div>
-                    
-                    <button type="submit" 
-                            class="w-full px-6 py-4 bg-ideolix-green text-white font-bold rounded-xl hover:bg-green-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                        <i class="fas fa-paper-plane mr-2"></i> Send Message
-                    </button>
-                </form>
-                
-                <div id="status-message" class="mt-4 text-center font-semibold text-base hidden p-3 rounded-lg"></div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
